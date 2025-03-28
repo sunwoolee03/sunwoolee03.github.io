@@ -1,9 +1,8 @@
 #version 300 es
 
-layout (location = 0) in vec3 aPos;
-
-uniform float dx, dy;
+in vec2 a_position;
 
 void main() {
-    gl_Position = vec4(aPos[0]+dx, aPos[1]+dy, aPos[2], 1.0);
+    gl_Position = vec4(a_position, 0.0, 1.0);
+    gl_PointSize = 10.0; // 점 크기 설정
 } 
